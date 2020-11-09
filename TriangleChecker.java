@@ -47,8 +47,32 @@ public class TriangleChecker {
 
   // Analyse der Dreiecksart
   public static TriangleType checkTriangle(float a, float b, float c) {
-    return TriangleType.NONE;
+    if(trianglePossible(a, b, c)){
+      if(a == b || b == c || c == a){
+      if(a == b && b == c)
+      return TriangleType.EQUILATERAL;
+      return TriangleType.ISOSCELES;
+      }        
+      return TriangleType.NORMAL;
+    }
+    return TriangleType.NONE;    
   }
 
+  private static boolean trianglePossible(float a, float b, float c){
+    if(positiveLength(a, b, c) && twoSidesLonger(a, b ,c))
+      return true;
+    return false;
+  }
 
+  private static boolean positiveLength(float a, float b, float c){
+    if(a>0 && b>0 && c>0)
+    return true;
+    return false;
+  }
+
+  private static boolean twoSidesLonger(float a, float b, float c){
+    if((a+b)>=c && (a+c)>=b && (b+c)>=a)
+    return true;
+    return false;
+  }
 }
