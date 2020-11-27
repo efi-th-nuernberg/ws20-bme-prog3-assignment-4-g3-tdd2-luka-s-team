@@ -64,6 +64,6 @@ public class TriangleChecker {
   }
 
   private static boolean twoSidesLonger(float a, float b, float c) {
-    return ((a+b)>=c && (a+c)>=b && (b+c)>=a);
+    return ((a+b)>c && (a+c)>b && (b+c)>a);
   }
 }

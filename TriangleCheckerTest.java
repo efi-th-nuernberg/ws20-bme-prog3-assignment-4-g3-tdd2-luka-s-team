@@ -39,11 +39,6 @@ public class TriangleCheckerTest {
     @Test
     public void testIscoscelesTriangle() {
 
-      // Arrange
-      float a = 1;
-      float b = 2;
-      float c = 1; 
-
-      assertEquals(TriangleChecker.TriangleType.ISOSCELES, TriangleChecker.checkTriangle(1, 2, 1));
+      assertEquals(TriangleChecker.TriangleType.ISOSCELES, TriangleChecker.checkTriangle(2, 3, 2));
     }
 }
